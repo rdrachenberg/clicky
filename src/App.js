@@ -6,7 +6,6 @@ import images from "./memoryImages.json";
 import "./App.css";
 import Navbar from "./components/Navbar/Index";
 
-
 class App extends Component {
   // Setting this.state.images to the images json array
   state = {
@@ -63,7 +62,7 @@ class App extends Component {
         <Title>Clickster</Title>
         {this.state.images.map(friend => (
           <FriendCard
-            suffleImages={this.suffleImages}
+            selectedImage={this.selectedImage}
             id={friend.id}
             key={friend.id}
             name={friend.name}
