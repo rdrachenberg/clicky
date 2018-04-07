@@ -23,14 +23,15 @@ class App extends Component {
     if (findImages === undefined) {
       // Image already clicked
       this.setState({
+        images: images,
+        unselectedImages: images,
         message: "Incorrect! Try again!.",
         highestScore: (this.state.currentScore > this.state.highestScore) ? this.state.currentScore : this.state.highestScore,
-        currentScore: 0,
-        images: images,
-        unselectedImages: images
+        currentScore: 0
+        
       });
     } else {
-      // Did not click an image
+      // Did not click on an already guessed image
       const newImage = this.state.unselectedImages.filter(item => item.name !== name);
 
       this.setState({
